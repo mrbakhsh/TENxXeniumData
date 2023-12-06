@@ -1,0 +1,86 @@
+---
+title: "TENxVisiumData"
+author:
+- name: Matineh Rahmatbakhsh
+  affiliation: ProCogia, Vancouver, Canada
+- name: Monica Ge 
+  affiliation: Genentech, South San Francisco, California, USA
+output:
+  BiocStyle::html_document:
+    toc_float: true
+package: TENxXeniumData
+abstract: |
+  The TENxXeniumData ExperimentHub package provides a collection of Xenium 
+  spatial transcriptomics datasets by 10X Genomics. These datasets have been formatted into the Bioconductor classes, the SpatialExperiment or SpatialFeatureExperiment (SFE), to facilitate seamless integration into various applications, including examples, demonstrations, and tutorials. The constructed data objects include gene expression profiles, per-transcript location data, centroid, segmentation boundaries (e.g., cell or nucleus boundaries), and image.
+vignette: |
+  %\VignetteIndexEntry{TENxXeniumData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE)
+```
+
+
+# Installation
+
+To install the `TENxXeniumData` package from GitHub:
+
+```{r, eval=FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("TENxXeniumData")
+```
+
+# Available datasets
+The `TENxXeniumData` package provides an R/Bioconductor resource for 
+[Xenium spatially-resolved data by 10X Genomics](https://support.10xgenomics.com/spatial-gene-expression/datasets). 
+The package currently includes the following datasets:
+
+* [Mouse Brain: 10x Genomics Xenium In Situ (Tiny Subset)](https://www.10xgenomics.com/resources/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard)
+  * `spe_mouse_brain` (SpatialExperiment Bioconductor class)
+  * `sfe_mouse_brain` (SpatialFeatureExperiment Bioconductor class)
+  
+  
+# Loading the data
+The following examples illustrate the process of loading the provided 
+datasets into your R session, representing them as objects of the `SpatialExperiment` or `SpatialFeatureExperiment` classes.
+
+There are two distinct approaches available for loading the datasets: 
+one involves utilizing named accessor functions, while the other entails 
+querying the ExperimentHub database for retrieval.
+
+
+## Load using named accessors
+
+```{r, message=FALSE}
+library(SpatialExperiment)
+library(SpatialFeatureExperiment)
+library(TENxXeniumData)
+```
+
+Loading SpatialExperiment object:
+```{r, message=FALSE, eval=FALSE}
+# load object
+spe <- spe_mouse_brain()
+
+# check object
+spe
+```
+Loading SpatialFeatureExperiment object:
+```{r, message=FALSE, eval=FALSE}
+# load object
+sfe <- sfe_mouse_brain()
+
+# check object
+sfe
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+

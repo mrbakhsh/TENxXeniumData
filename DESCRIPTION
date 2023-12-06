@@ -1,0 +1,38 @@
+Package: TENxXeniumData
+Version: 0.99.1
+Title: Collection of Xenium spatial data by 10X genomics
+Description: 
+    Collection of Xenium spatial transcriptomics datasets provided by 10x 
+    Genomics, formatted into the Bioconductor classes, the SpatialExperiment 
+    or SpatialFeatureExperiment (SFE), to facilitate seamless integration 
+    into various applications, including examples, demonstrations, 
+    and tutorials. The constructed data objects include gene expression 
+    profiles, per-transcript location data, centroid, segmentation 
+    boundaries (e.g., cell or nucleus boundaries), and image. 
+Authors@R: c(person("Matineh", "Rahmatbakhsh", email = "matinerb.94@gmail.com",
+    role = c("aut")),
+    person("Monica", "Ge", email = "gex5@gene.com",
+    role = c("aut", "cre")))
+URL: https://github.com/mrbakhsh/TENxXeniumData
+BugReports: https://github.com/mrbakhsh/TENxXeniumData/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+biocViews:
+    ExperimentData, 
+    ExperimentHub, 
+    ReproducibleResearch, 
+    SingleCellData, 
+    SpatialData, 
+Depends: 
+    ExperimentHub, 
+    SpatialExperiment,
+    SpatialFeatureExperiment
+Imports:
+    SpatialExperiment,
+    SpatialFeatureExperiment
+VignetteBuilder: knitr
+Suggests:
+    BiocStyle, 
+    knitr, 
+    rmarkdown
+RoxygenNote: 7.2.3
