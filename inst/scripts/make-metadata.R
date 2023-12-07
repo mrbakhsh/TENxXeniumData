@@ -18,7 +18,7 @@ df_all <- data.frame(
 df_spe_mouse_brain <- cbind(
   df_all,
   Title = "spe_mouse_brain",
-  Description = "Example Xenium Tiny subset dataset from 10x Genomics provided in the Fresh Frozen Mouse Brain for Xenium Explorer Demo",
+  Description = "Example Xenium Tiny subset dataset from 10x Genomics, which is sourced from the Fresh Frozen Mouse Brain for the Xenium Explorer Demo",
   SourceUrl = "https://www.10xgenomics.com/resources/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard",
   Species = "Mus musculus",
   TaxonomyId = "10090",
@@ -32,7 +32,7 @@ df_spe_mouse_brain <- cbind(
 df_sfe_mouse_brain <- cbind(
   df_all,
   Title = "sfe_mouse_brain",
-  Description = "Example Xenium Tiny subset dataset from 10x Genomics provided in the Fresh Frozen Mouse Brain for Xenium Explorer Demo",
+  Description = "Example Xenium Tiny subset dataset from 10x Genomics, which is sourced from the Fresh Frozen Mouse Brain for the Xenium Explorer Demo",
   SourceUrl = "https://www.10xgenomics.com/resources/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard",
   Species = "Mus musculus",
   TaxonomyId = "10090",
@@ -44,11 +44,41 @@ df_sfe_mouse_brain <- cbind(
 
 
 
+df_spe_human_pancreas <- cbind(
+  df_all,
+  Title = "spe_human_pancreas",
+  Description = "Example Preview Xenium dataset from 10x Genomics, which is sourced from the FFPE Human Pancreas",
+  SourceUrl = "https://www.10xgenomics.com/resources/datasets/human-pancreas-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  RDataPath = "TENxXeniumData/spe_human_pancreas.rds",
+  RDataClass = "SpatialExperiment",
+  SourceType = "Zip",
+  stringsAsFactors = FALSE
+)
+
+
+df_sfe_human_pancreas <- cbind(
+  df_all,
+  Title = "sfe_human_pancreas",
+  Description = "Example Preview Xenium dataset from 10x Genomics, which is sourced from the FFPE Human Pancreas",
+  SourceUrl = "https://www.10xgenomics.com/resources/datasets/human-pancreas-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  RDataPath = "TENxXeniumData/sfe_human_pancreas.rds",
+  RDataClass = "SpatialFeatureExperiment",
+  SourceType = "Zip",
+  stringsAsFactors = FALSE
+)
+
+
 # combine and save as .csv spreadsheet file
 
 df_combined <- rbind(
   df_spe_mouse_brain,
-  df_sfe_mouse_brain
+  df_sfe_mouse_brain,
+  df_spe_human_pancreas,
+  df_sfe_human_pancreas
 )
 
 write.csv(df_combined, file = "metadata.csv", row.names = FALSE)
