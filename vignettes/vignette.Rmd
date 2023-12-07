@@ -68,7 +68,7 @@ The package currently includes the following datasets:
   * `sfe_mouse_brain` (SpatialFeatureExperiment Bioconductor class)
 
 
-* [Human Pancreas: 10x Genomics Xenium In Situ (Tiny Subset)](https://www.10xgenomics.com/resources/datasets/human-pancreas-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard)
+* [Human Pancreas: 10x Genomics Xenium In Situ](https://www.10xgenomics.com/resources/datasets/human-pancreas-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard)
   * `spe_human_pancreas` (SpatialExperiment Bioconductor class)
   * `sfe_human_pancreas` (SpatialFeatureExperiment Bioconductor class)  
   
