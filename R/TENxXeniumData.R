@@ -14,6 +14,8 @@
   #' \itemize{
   #' \item{spe_mouse_brain}
   #' \item{sfe_mouse_brain}
+  #' \item{spe_human_pancreas}
+  #' \item{sfe_human_pancreas}
   #' }
   #' @return
   #' a \code{\linkS4class{SpatialExperiment}} or
