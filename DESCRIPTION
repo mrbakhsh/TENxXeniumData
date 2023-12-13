@@ -27,7 +27,8 @@ Depends:
     ExperimentHub
 Imports:
     SpatialExperiment,
-    SpatialFeatureExperiment
+    SpatialFeatureExperiment,
+    BumpyMatrix
 VignetteBuilder: knitr
 Suggests:
     BiocStyle, 
