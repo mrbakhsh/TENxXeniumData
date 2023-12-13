@@ -24,9 +24,7 @@ biocViews:
     SingleCellData, 
     SpatialData, 
 Depends: 
-    ExperimentHub, 
-    SpatialExperiment,
-    SpatialFeatureExperiment
+    ExperimentHub
 Imports:
     SpatialExperiment,
     SpatialFeatureExperiment
