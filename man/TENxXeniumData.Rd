@@ -4,6 +4,8 @@
 \alias{TENxXeniumData}
 \alias{spe_mouse_brain}
 \alias{sfe_mouse_brain}
+\alias{spe_human_pancreas}
+\alias{sfe_human_pancreas}
 \title{TENxXeniumData}
 \value{
 a \code{\linkS4class{SpatialExperiment}} or
@@ -21,6 +23,8 @@ datasets by 10X Genomics are currently available:
 \itemize{
 \item{spe_mouse_brain}
 \item{sfe_mouse_brain}
+\item{spe_human_pancreas}
+\item{sfe_human_pancreas}
 }
 }
 \examples{
