@@ -72,25 +72,25 @@ The package currently includes the following datasets:
   * `spe_human_pancreas` (SpatialExperiment Bioconductor class)
   * `sfe_human_pancreas` (SpatialFeatureExperiment Bioconductor class)  
   
-# Loading the data
-The following examples illustrate the process of loading the provided 
-datasets into your R session, representing them as objects of the `SpatialExperiment` or `SpatialFeatureExperiment` classes.
-
-There are two distinct approaches available for loading the datasets: 
-one involves utilizing named accessor functions, while the other entails 
-querying the ExperimentHub database for retrieval.
-
-
-## Load using named accessors
+A list of currently available datasets can be obtained using the ExperimentHub 
+interface:
 
 ```{r, message=FALSE}
 library(SpatialExperiment)
 library(SpatialFeatureExperiment)
 library(TENxXeniumData)
+
+eh <- ExperimentHub()
+(q <- query(eh, "TENxXenium"))
 ```
+  
+# Loading the data
+The following examples illustrate the process of loading the provided 
+datasets into your R session, representing them as objects of 
+the `SpatialExperiment` or `SpatialFeatureExperiment` classes.
 
 Loading SpatialExperiment object:
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 # load object
 spe <- spe_mouse_brain()
 
@@ -98,7 +98,7 @@ spe <- spe_mouse_brain()
 spe
 ```
 Loading SpatialFeatureExperiment object:
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 # load object
 sfe <- sfe_mouse_brain()
 
