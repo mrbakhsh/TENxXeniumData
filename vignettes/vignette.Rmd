@@ -83,7 +83,7 @@ The package currently includes the following datasets:
 A list of currently available datasets can be obtained using the ExperimentHub 
 interface:
   
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 library(SpatialExperiment)
 library(SpatialFeatureExperiment)
 library(TENxXeniumData)
@@ -100,7 +100,7 @@ datasets into your R session, representing them as objects of
 the `SpatialExperiment` or `SpatialFeatureExperiment` classes.
 
 Loading SpatialExperiment object:
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 # load object
 spe <- spe_mouse_brain()
 
@@ -108,13 +108,13 @@ spe <- spe_mouse_brain()
 spe
 ```
 
-```{r, eval=FALSE}
+```{r}
 # here, cellular segmentations are stored in per-cell metadata 
 colData(spe)
 ```
 
 Loading SpatialFeatureExperiment object:
-```{r, message=FALSE, eval=FALSE}
+```{r, message=FALSE}
 # load object
 sfe <- sfe_mouse_brain()
 
