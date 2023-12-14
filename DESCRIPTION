@@ -20,15 +20,14 @@ Encoding: UTF-8
 biocViews:
     ExperimentData, 
     ExperimentHub, 
-    ReproducibleResearch, 
-    SingleCellData, 
-    SpatialData, 
+    SpatialData
 Depends: 
     ExperimentHub
 Imports:
     SpatialExperiment,
     SpatialFeatureExperiment,
-    BumpyMatrix
+    BumpyMatrix,
+    SummarizedExperiment
 VignetteBuilder: knitr
 Suggests:
     BiocStyle, 
