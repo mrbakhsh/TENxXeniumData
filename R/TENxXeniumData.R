@@ -3,6 +3,8 @@
   #' @aliases
   #' spe_mouse_brain
   #' sfe_mouse_brain
+  #' spe_human_pancreas
+  #' sfe_human_pancreas
   #' @description
   #' Collection of Xenium spatial transcriptomics datasets from 10X Genomics,
   #' formatted into the Bioconductor classes, the SpatialExperiment or
