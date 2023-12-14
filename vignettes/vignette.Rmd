@@ -44,7 +44,7 @@ markers and the imaging data, in addition to the gene expression profile of
 each cell, the centroid, and the boundary of each cell. 
 Additionally, we have chosen to employ SpatialExperiment as an alternative 
 scheme for data representation.  In this scheme, cellular segmentations 
-are integrated into the metadata information of the constructed object,
+are integrated into per-cell metadata of the constructed object,
 
 
 # Installation
