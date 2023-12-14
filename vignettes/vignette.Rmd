@@ -1,24 +1,32 @@
 ---
-  title: "TENxVisiumData"
+title: "TENxXeniumData"
 author:
-  - name: Matineh Rahmatbakhsh
-affiliation: ProCogia, Vancouver, Canada
+- name: Matineh Rahmatbakhsh
+  affiliation: ProCogia, Vancouver, Canada
 - name: Monica Ge 
-affiliation: Genentech, South San Francisco, California, USA
+  affiliation: Genentech, South San Francisco, California, USA
 output:
   BiocStyle::html_document:
   toc_float: true
 package: TENxXeniumData
 abstract: |
   The TENxXeniumData ExperimentHub package provides a collection of Xenium 
-spatial transcriptomics datasets by 10X Genomics. These datasets have been formatted into the Bioconductor classes, the SpatialExperiment or SpatialFeatureExperiment (SFE), to facilitate seamless integration into various applications, including examples, demonstrations, and tutorials. The constructed data objects include gene expression profiles, per-transcript location data, centroid, segmentation boundaries (e.g., cell or nucleus boundaries), and image.
+  spatial transcriptomics datasets by 10X Genomics. These datasets have been 
+  formatted into the Bioconductor classes, the SpatialExperiment or 
+  SpatialFeatureExperiment (SFE), to facilitate seamless integration into 
+  various applications, including examples, demonstrations, and tutorials. 
+  The constructed data objects include gene expression profiles, 
+  per-transcript location data, centroid, segmentation boundaries 
+  (e.g., cell or nucleus boundaries), and image.
 vignette: |
   %\VignetteIndexEntry{TENxXeniumData}
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
+
+
   
-  ```{r include = FALSE}
+```{r include = FALSE}
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE)
 ```
 
@@ -63,23 +71,24 @@ The `TENxXeniumData` package provides an R/Bioconductor resource for
 [Xenium spatially-resolved data by 10X Genomics](https://support.10xgenomics.com/spatial-gene-expression/datasets). 
 The package currently includes the following datasets:
   
-  * [Mouse Brain: 10x Genomics Xenium In Situ (Tiny Subset)](https://www.10xgenomics.com/resources/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard)
-* `spe_mouse_brain` (SpatialExperiment Bioconductor class)
-* `sfe_mouse_brain` (SpatialFeatureExperiment Bioconductor class)
-
+* [Mouse Brain: 10x Genomics Xenium In Situ (Tiny Subset)](https://www.10xgenomics.com/resources/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard)
+  * `spe_mouse_brain` (SpatialExperiment Bioconductor class)
+  * `sfe_mouse_brain` (SpatialFeatureExperiment Bioconductor class)
+ 
 
 * [Human Pancreas: 10x Genomics Xenium In Situ](https://www.10xgenomics.com/resources/datasets/human-pancreas-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard)
-* `spe_human_pancreas` (SpatialExperiment Bioconductor class)
-* `sfe_human_pancreas` (SpatialFeatureExperiment Bioconductor class)  
+  * `spe_human_pancreas` (SpatialExperiment Bioconductor class)
+  * `sfe_human_pancreas` (SpatialFeatureExperiment Bioconductor class)  
 
 A list of currently available datasets can be obtained using the ExperimentHub 
 interface:
   
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 library(SpatialExperiment)
 library(SpatialFeatureExperiment)
 library(TENxXeniumData)
 library(BumpyMatrix)
+library(SummarizedExperiment)
 
 eh <- ExperimentHub()
 (q <- query(eh, "TENxXenium"))
@@ -91,15 +100,21 @@ datasets into your R session, representing them as objects of
 the `SpatialExperiment` or `SpatialFeatureExperiment` classes.
 
 Loading SpatialExperiment object:
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 # load object
 spe <- spe_mouse_brain()
 
 # check object
 spe
 ```
+
+```{r, eval=FALSE}
+# here, cellular segmentations are stored in per-cell metadata 
+colData(spe)
+```
+
 Loading SpatialFeatureExperiment object:
-```{r, message=FALSE}
+```{r, message=FALSE, eval=FALSE}
 # load object
 sfe <- sfe_mouse_brain()
 
